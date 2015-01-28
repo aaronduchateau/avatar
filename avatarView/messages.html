@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,800,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../dist/scroll/jquery.mCustomScrollbar.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="body-dash" style="background-color: #337ab7;">
+    <!--top menu goes here-->
+    <div class="options-area" style="margin-left:5px;margin-right:10px;">
+      <h5 style="color:white;" class="left-result-heading dash-heading-4 pull-left">
+        &nbsp;&nbsp;&nbsp;Good News! 250 gigs near your location (97401)
+      </h5>
+      <div class="pull-left left-action-buttons" style="display:none;">
+        <h3 class="left-action-buttons-title">Avatar Needed</h3>
+        <a class="btn btn-primary pull-right back" style="margin-right: 20px;">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
+        </a>
+        <div class="dropdown pull-right">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="margin-right:10px;">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Apply</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bookmark</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Endorse</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Print</a></li>
+          </ul>
+        </div>
+        <a href="javascript:void(0);" id="review-scroll" class="btn btn-primary pull-right">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+        </a>
+      </div>
+      <button id="config" class="btn btn-primary pull-right" style="margin-right:10px;">
+        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 
+      </button>
+      <button class="btn btn-primary pull-right back-right" style="margin-right:10px;display:none;">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </button>
+      <button class="btn btn-primary pull-right" style="margin-right:10px;">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+      <input class="input custom-input pull-right" placeholder="Search by Name or Company">
+    </div>
+    <div class="container-dash">
+      <div class="dash-left-list" style="background-color:rgba(13,106,146,0.9);">
+        <div class="dash-left-inter-margin">
+          <!--this is populated using avatarTemplate-->
+        </div>
+        <div class="dash-left-full-margin">
+        </div>
+      </div>
+      <div id="map-canvas" class="dash-center" style="background-color:#7692AA;">
+        <div class="dash-center-top-container">
+          <div class="dash-center-top">
+            <h4 class="white-class" style="width:300px;text-align:center;margin-top:50px;">
+            <img src="../images/loader.gif" style="width:32px;height:32px;">
+            Loading Content...
+            </h4>
+          </div>  
+        </div>
+        <div class="dash-center-bottom" style="width:100%;padding:15px;background-color:rgb(51, 122, 183);">
+          <div class="pull-left" style="width: 70%">
+            <textarea id="message-box" style="height:74px;padding:5px;"></textarea>
+          </div>
+          
+          <a class="btn btn-primary pull-right" style="margin-right: 0px">
+            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> 
+          </a>
+          <a class="btn btn-primary pull-right">
+            <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> 
+          </a>
+          <a class="btn btn-primary pull-right">
+            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 
+          </a>
+           <br><br>
+          <a class="btn btn-primary pull-right" id="send-btn" style="margin-right: 0px;">
+            Send <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
+          </a>
+         
+    
+        </div>    
+        
+      </div>
+      <div class="dash-right-list" style="background-color:rgba(13,106,146,0.9);">
+        <div class="dash-right-inter-margin">
+          <!--this is populated using avatarTemplate-->
+        </div>
+      </div>
+      <div class="dash-options" style="background-color:rgba(13,106,146,0.0);">
+        <div class="options-inter-margin" style="display:none;">
+          <!--content-->
+          <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Search by Keyword:</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Filter by Keywords">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Search Location:</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Address">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="State">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Zip">
+              <input type="checkbox"> <span style="color:white;">Reset to saved Address</span>
+            </div>
+            <div class="form-group">
+               <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                    filter within 50 miles
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10 miles</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">25 miles</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">50 miles</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">75 miles</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">100 miles</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">200 miles</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Day Range:</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Start Date:">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="End Date:">
+            </div>
+            <button type="submit" class="btn btn-default">Update Search Results</button>
+          </form>
+          <!--content-->
+        </div>
+      </div>
+    </div>
+    <!--load our handlerbars templates into this div-->
+    <div id="global-template-holder" style="display:none;">
+    </div>  
+    <div id="template-holder-center" style="display:none;">
+    </div>  
+    <div id="template-holder" style="display:none;">
+    </div>  
+
+    <div class="modal fade bs-example-modal-lg blue-background" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color:rgba(13,106,146,0.8);">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <p class="modal-title" id="exampleModalLabel" style="color:#d3d3d3;font-size:15px;">Don't have an Account? <a href="#" style="color:white;">Sign Up Here</a>.</p>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <form class="navbar-form navbar-left well custom-form-well" role="form" >
+                  <p class="custom-font" style="margin-top:0px;">Sign into Avatar Account</p>
+                  <div class="form-group form-margin">
+                    <input type="text" placeholder="Email" class="form-control">
+                  </div>
+                  <div class="form-group form-margin">
+                    <input type="password" placeholder="Password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+              </div>
+              <div class="col-md-4">
+                <form class="navbar-form navbar-left well custom-form-well" role="form" >
+                  <p class="custom-font" style="margin-top:0px;">Sign into Company Account</p>
+                  <div class="form-group form-margin">
+                    <input type="text" placeholder="Email" class="form-control">
+                  </div>
+                  <div class="form-group form-margin">
+                    <input type="password" placeholder="Password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+              </div>
+              <div class="col-md-4">
+               <h2 class="custom-text-brand"> MyEyesRemote&#0153;</h2>
+               <img src="../images/logo-small.png" style="margin-left:10px;margin-top:10px;"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&v=3&libraries=geometry"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/handlebars-v2.0.0.js"></script>
+    <script src="../dist/js/jQuery.print.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="../assets/jsModels/avatarDashboardModel.js"></script>
+    <script src="../assets/jsModels/messagesModel.js"></script>
+    <script src="../assets/jsControllers/googleMapPopulateScoped.js"></script>
+    <script src="../assets/jsControllers/globalVars.js"></script>
+    <script src="../dist/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--$(selector).mCustomScrollbar("scrollTo",position,options);-->
+    <!--//http://manos.malihu.gr/jquery-custom-content-scroller/-->
+
+  </body>
+  <script>
+  $( document ).ready(function() {
+
+    //set up everything to have the right margins and what not
+    window.g.triPageSetup();
+   
+    //load global template and populate top menu
+    window.g.populateTopMenu({dash:'', profile:' active', transactions:'', help:''});
+
+    function stickyScrolly(){
+      $('.dash-center-top-container').mCustomScrollbar("update");
+      $('.dash-center-top-container').mCustomScrollbar("scrollTo","bottom");
+    }
+
+    //specific sizing for message area setup
+    $('.dash-center-top-container').css('height', (window.g.adjustedWindowHeight() - 100) + 'px');
+    $('.dash-center-bottom').css('height', '100px');
+    $('#message-box').css('width', (window.g.halfWidth() - 155) + 'px');
+
+    //load left and center pains
+    $("#template-holder-center").load( "../assets/jsTemplates/messagesTemplate.html", function() {
+      //this loads our template for the left pain
+      var source   = $("#messages-left-template").html();
+      var leftDashTemplate = Handlebars.compile(source);
+      var templateResult = leftDashTemplate(window.messages);
+      //$('.dash-left-inter-margin').empty();
+      $('.dash-left-inter-margin').html(templateResult);
+
+      setTimeout(function(){
+        //this load our template for the center pain
+        var sourceCenter = $("#messages-center-template").html();
+        var centerDashTemplate = Handlebars.compile(sourceCenter);
+        var templateResultCenter = centerDashTemplate(window.messages.messageResults[0]);
+        $('.dash-center-top').html(templateResultCenter);
+
+        stickyScrolly();
+      },500);
+
+    });
+
+    //load right pain
+    $("#template-holder").load( "../assets/jsTemplates/avatarDashTemplate.html", function() {
+      //this load our template for the right pain 
+      var source   = $("#dash-right-template").html();
+      //console.log(source);
+      var rightDashTemplate = Handlebars.compile(source);
+      var templateResult = rightDashTemplate(window.avatar);
+      //console.log(templateResult);
+      $('.dash-right-inter-margin').append(templateResult);
+    });
+    
+
+    $(window).load(function(){
+        
+      $(".dash-left-list").mCustomScrollbar({
+        theme:"minimal"
+      });
+
+      $(".dash-right-list").mCustomScrollbar({
+        theme:"minimal"
+      });
+
+      $(".dash-center-top-container").mCustomScrollbar({
+        theme:"minimal"
+      });
+      
+    });
+
+    //print the left dash pain
+    $(document).on('click', '#print-left-dash', function(event) {
+      $('.dash-left-full-margin').print({
+        globalStyles : false, // Use Global styles
+        mediaPrint : false, // Add link with attrbute media=print
+        //stylesheet : "http://fonts.googleapis.com/css?family=Inconsolata", //Custom stylesheet
+        iframe : false, //Print in a hidden iframe
+        noPrintSelector : ".avoid-this", // Don't print this
+        append : "custom tip can go here", // Add this on top
+        prepend : "<h2>Avatar RFP - MyEyesRemote.com</h2>" // Add this at bottom
+      });
+    });
+
+    //click on a new message thred from the left hand side, and load messages
+    $(document).on('click', '.left-open', function(event) {
+        $('.dash-center-top').html(window.g.generalLoaderHtml);
+        setTimeout(function(){
+          var sourceCenter = $("#messages-center-template").html();
+          var centerDashTemplate = Handlebars.compile(sourceCenter);
+          var indexTracker = $(event.target).closest('div').attr('data-result-index');
+          var templateResultCenter = centerDashTemplate(window.messages.messageResults[indexTracker]);
+          $('.dash-center-top').html(templateResultCenter);
+          stickyScrolly();
+        },500);
+    });
+
+    //add a new message
+    $(document).on('click', '#send-btn', function(event) {
+        //copy object to not nuke original guy
+        var instanceMessageJson = jQuery.extend(true, {}, window.messages.messageResults[0]);
+        instanceMessageJson.name = "Aaron DuChateau";
+        instanceMessageJson.company = "MyEyesRemote";
+        instanceMessageJson.messages = [
+        {
+          "id": 0,
+          "name": "Aaron DuChateau",
+          "messageDate": "2014-08-02T18:14:24 +07:00",
+          "messageContent": $('#message-box').val(),
+          "hasJobLink": "reprehenderit",
+          "joblinkTitle": false
+        }];
+        var sourceCenter = $("#messages-center-template").html();
+        var centerDashTemplate = Handlebars.compile(sourceCenter);
+        var templateResultCenter = centerDashTemplate(instanceMessageJson);
+        $('.dash-center-top').append(templateResultCenter);
+        $('#message-box').val('');
+        stickyScrolly();
+    });
+
+    
+
+    //a link inside of the message area has been clicked so open the job in the left pain
+    $(document).on('click', '.left-open-job', function(event) {
+        //$(".container-dash").css('left','0px');
+        $('#config').hide();
+        $('.back').show();
+        $('.back-right').hide()
+        //start: toggle heading area
+        $('.left-result-heading').hide();
+        $('.left-action-buttons').show();
+        //end: toggle heading area
+        $('.dash-left-inter-margin').slideUp('slow');
+        $('.dash-left-full-margin').slideUp('slow');
+        $( ".container-dash" ).animate({
+          left: "0"
+        }, 400, function() {
+          // Animation complete.
+          
+          //this loads our template for the expanded info view in the left pain
+          var source = $("#dash-expanded-info-template").html();
+          var leftDashTemplate = Handlebars.compile(source);
+          //var indexTracker = $(event.target).attr('data-result-index');
+          var indexTracker = $(event.target).closest('div').attr('data-result-index');
+          //console.log(indexTracker);
+          //console.log(event.target);
+          var templateResult = leftDashTemplate(window.avatar.dashFatArrayData[indexTracker]);
+          $('.dash-left-full-margin').html(templateResult);
+
+          //this loads the work description for the expanded view
+          source   = $("#job-description").html();
+          leftDashTemplate = Handlebars.compile(source);
+          templateResult = leftDashTemplate(window.avatar);
+          $('.dash-left-full-margin').append(templateResult);
+          //load empty div for binding
+          $('.dash-left-full-margin').append("<h4 id='top-review' class='white-class'>User Reviews:</h4>");
+          //this loads the user reviews for the expanded view
+          source   = $("#user-reviews").html();
+          leftDashTemplate = Handlebars.compile(source);
+          templateResult = leftDashTemplate(window.avatar);
+          $('.dash-left-full-margin').append(templateResult);
+
+          $('#image-thumb-slider').css("max-width", (window.g.halfWidth() - 80) + "px");
+          $('.dash-left-full-margin').slideDown('slow');
+        });
+    });
+    
+    //bind scroll click to view user reviews
+    $(document).on('click', '#review-scroll', function() {
+        $(".dash-left-list").mCustomScrollbar("scrollTo","#top-review");
+    });
+
+    $(document).on('click', '.back', function() {
+       goBack();
+    });
+
+    $(document).on('click', '.back-right', function() {
+       goBack();
+    });
+
+    function goBack(){
+      $('.back-right').hide();
+      $('#config').show();
+        //start: toggle heading area
+      $('.left-result-heading').show();
+      $('.left-action-buttons').hide();
+      //end: toggle heading area
+      $('.dash-left-full-margin').slideUp('slow');
+      $( ".container-dash" ).animate({
+        left: - window.g.oneQuarterWidth()
+      }, 400, function() {
+        $('.dash-left-inter-margin').slideDown('slow');
+          // Animation complete.
+      });
+    }
+
+    $(document).on('click', '#config', function() {
+       //$(".container-dash").css('left','0px');
+       $('#config').hide();
+       $('.back-right').show();
+        $( ".container-dash" ).animate({
+          left: - window.g.halfWidth()
+        }, 400, function() {
+          // Animation complete.
+        });
+    });
+    
+  });
+  </script>
+</html>

@@ -1,0 +1,38 @@
+<script id="top-menu" type="text/x-handlebars-template">
+{dash:'active', profile:'', transactions:'', help:''};
+	<nav class="navbar navbar-fixed-top" role="navigation" style="background-color:#0D6A92;">
+      <div class="container" style="width:100%;">
+        <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right" style="margin-top:-12px;">
+            <li role="presentation" class="{{dash}}"><a href="dash.html">Avatar Dashboard</a></li>
+
+            <li class="dropdown {{profile}}">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile Options <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="dash.html">Edit Profile</a></li>
+                <li><a href="#">Following</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="#">My Gear</a></li>
+                <li><a href="#">Account Settings</a></li>
+              </ul>
+            </li>
+
+            <li role="presentation" class="{{gear}}"><a href="#">My Gear</a></li>
+            <li role="presentation" class="{{transactions}}"><a href="#">Transactions</a></li>
+            <li role="presentation" class="{{help}}"><a href="#">Help</a></li>
+            <li role="presentation"><a href="#">Sign Out</a></li>
+          </ul>
+        </nav>
+        <h3 class="custom-text-brand"><img src="../images/logo-small.png" style="width:50px;margin-top:-4px;"/> MyEyesRemote&#0153;</h3>
+        </div>
+      </div>
+    </nav>
+</script>
+<script id="general-loader" type="text/x-handlebars-template">
+<h4 class="white-class" style="width:300px;text-align:center;margin-top:50px;">
+  <img src="../images/loader.gif" style="width:32px;height:32px;">
+  Loading Content...
+</h4>
+</script>
+	    	

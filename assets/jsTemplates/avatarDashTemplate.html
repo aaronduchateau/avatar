@@ -1,0 +1,220 @@
+<script id="user-reviews" type="text/x-handlebars-template">
+	{{#userReviews}} 
+	<!--start item-->
+	<div class="well custom-well-info">
+        <h6 class="review-heading">{{title}}:
+        <span class="pull-right">
+        	<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+        </h6>
+        </p>
+        <p class="review-date">{{rDate}}<p>
+        <p class="body">{{body}}</p>
+    </div>
+	<!--end item--> 
+	{{/userReviews}} 
+</script>
+<script id="job-description" type="text/x-handlebars-template">
+	{{#jobDescription}} 
+	<!--start item-->
+	<div class="white-class">
+        <h4 class="heading just-custom-font-header">{{title}}:</h4>
+        <p class="body just-custom-font-header">{{body}}</p>
+    </div>
+	<!--end item--> 
+	{{/jobDescription}} 
+</script>
+<script id="dash-left-template" type="text/x-handlebars-template">
+	{{#dashLeftArrayData}} 
+	<!--start item-->
+	    <div class="custom-well-dash-left left-open" data-result-index="{{@index}}">
+	      <table style="margin-left:15px;margin-right:5px;width:95%;">
+	        <tr>
+	          <td style="width:90%;">
+	            <p class="heading">{{title}}</p>
+	            <p class="body">{{body}}</p>
+	            <p class="small">
+	            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+	            <span class="mile-holder">{{distance}}</span>
+	            <span class="pull-right">
+	            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+	            <span class="date-holder">{{eDate}}</span>
+	            </p>
+	          </td>
+	          <td style="width:10%;">
+	          <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true" style="color:white;margin-right:10px;"></span>
+	          </td>
+	        </tr>
+	      </table>
+	    </div>
+	<!--end item--> 
+	{{/dashLeftArrayData}} 
+</script>
+
+<script id="dash-right-template" type="text/x-handlebars-template">
+	{{#dashRightArrayData}} 
+	<!--start item-->
+        <div class="custom-well-dash-left">
+          <table style="margin-left:10px;margin-right:5px;">
+            <tr>
+              <td style="width:18%;">
+               <img src="../images/icon-user-default.png" style="margin-left:5px;margin-right:10px;" class="small-user">
+              </td>
+              <td>
+                <div style='margin-top:10px;margin-bottom:10px;'>
+                <!--<span class="heading"></span> - -->
+                <span class="body">{{body}}</span>
+                <p class="small">
+                <span class="pull-left">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                <span class="date-holder">{{eDate}}</span>
+                <br><br>
+                </p>
+                </div>
+        
+              </td>
+            </tr>
+          </table>
+        </div>
+    <!--end item--> 
+	{{/dashRightArrayData}} 
+</script>
+
+<script id="map-info-template" type="text/x-handlebars-template">
+	<div class="content-marker">
+		<div id="bodyContent" style="margin-left:15px;">
+			<h4 class="just-custom-font-header">Avatar Needed</h4>
+			<h5 class="just-custom-font-header">{{ORIGINALSOURCE}}</h5>
+			<h6 class="just-custom-font-header"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{Property}} (1.7mi)</h6>
+			<p>Looking for qualified applicant to survey factory floor, and check for sealent defects. Desired applicant should be...
+			</p>
+			<div style="width:130px;" class="pull-left">
+				<h6>
+					<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{DATE}}
+				</h6>
+				<h6>
+					<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{STARTTIME}} - {{ENDTIME}}
+				</h6>
+				<h5 style="color:#0D6A92;">
+					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				</h5>
+		    </div>		
+		    <div style="width:150px;" class="pull-right" data-result-index="{{TRACKER}}">
+			    <h2 class="pull-right" style="margin-top:3px;color:#0D6A92;">
+			    <span style="font-size:0.6em;">$</span>{{ORIGINALLISTPRICE}}<span style="font-size:0.4em;">/ hr</span>
+			    </h2>
+			    <a href="javascript:void(0);" data-result-index="{{TRACKER}}" class="btn btn-primary pull-right left-open" style="margin-top:-3px;">
+					View Gig Information
+				</a>
+		    </div>
+		</div>
+	</div>
+</script>
+
+<script id="dash-expanded-info-template" type="text/x-handlebars-template">
+	<div class="content-info">
+		<div id="bodyContentInfo">
+			<div class="dash-expanded-info-title pull-left" style="width:50%;">
+				<h4 class="just-custom-font-header white-class" style="margin-top:0px;">{{ORIGINALSOURCE}}</h4>
+			</div>
+			<span class="glyphicon glyphicon-print pull-right" style="margin-right:3px;color:white;" id="print-left-dash" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-envelope pull-right" style="margin-right:10px;color:white;" aria-hidden="true"></span>
+            <div style="clear:both;"></div>
+            <table style="width:100%;">
+            	<tr>
+            		<td style="width:50%;">
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+            					Gig Compensation:
+            				</span>
+            				<br/>
+            				<h5>
+	            				<span class="label label-primary darker-blue-backgroud-class">
+	            					$ {{ORIGINALLISTPRICE}} / hr
+	            				</span>	
+            				</h5>
+            			</div>
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+            				 	Gig location:
+            				</span>
+            				<br/>
+            				<h5>
+            					<span class="label label-primary darker-blue-backgroud-class">
+            						{{Property}}
+        						</span>
+    						</h5>
+    					</div>
+            			<div class="well custom-well-info">
+            				<span class="just-custom-font">
+								Gig date:
+							</span>
+							<br/>
+							<h5>
+								<span class="label label-primary darker-blue-backgroud-class">
+								{{DATE}} @ {{STARTTIME}} - {{ENDTIME}}
+								</span>
+							</h5>
+            			</div>
+            		</td>
+            		<td style="max-width:50%;">
+	            		<div class="well custom-well-info">
+		            		<span class="just-custom-font">Preferred Candidate Experience:</span>
+		            		<br/>
+		            		<h5>
+		            			<span class="label label-primary darker-blue-backgroud-class">DAT license</span>
+		            		</h5>
+	            		</div>
+	            		<div class="well custom-well-info">
+		            		<span class="just-custom-font">Preferred Candidate Equipment:</span>
+		            		<br/>
+		            		<h5>
+		            			<span class="label label-primary darker-blue-backgroud-class">iPad</span>
+		            			<span class="label label-primary darker-blue-backgroud-class">Google Glass</span>
+		            		</h5>
+	            		</div>
+	            		<div class="well custom-well-info">
+		            		<span class="just-custom-font">Preferred Meeting Technology:</span>
+		            		<br/>
+		            		<h5>
+		            			<span class="label label-primary darker-blue-backgroud-class">Google Hangout</span>
+		            		</h5>
+	            		</div>
+            		</td>
+            	</tr>	
+            </table>
+            <div class="custom-well-info" style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;border-radius: 4px;">
+	            <table style="width:95%;">
+		            <tr>
+			            <td>
+			            	<h1>
+			            		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:white;margin-left:-15px;margin-right:5px;"></span>
+			            	</h1>
+			            </td>
+			            <td style="overflow:hidden;max-height:110px;" id="image-thumb-slider">
+			            	<div style="width:1000000px;max-height:100px;">
+			            		<div style="position:relative;">
+			            		<img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/><img src="http://stateofthemarkets.com/wp-content/uploads/2013/06/factory-floor-650x400.jpg" class="thumbnail-class"/>
+			            		</div>
+			            	</div>
+			            </td>
+			            <td>
+			            	<h1>
+			            		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:white;margin-left: 0px;"></span>
+			            	</h1>
+			            </td>
+		            </tr>
+	            </table>
+
+            </div>
+		</div>
+	</div>
+</script>
+	    	
